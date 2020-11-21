@@ -53,7 +53,7 @@ form button:hover {
 
 .todo-list {
   min-width: 30%;
-  max-width: 50%;
+  max-width: 80%;
   max-height: 50vh;
   overflow: hidden;
   overflow-y: scroll;
@@ -80,9 +80,6 @@ form button:hover {
   flex: 1;
   width: 70%;
   white-space: nowrap;
-}
-.todo button{
-  width: 7%;
 }
 
 .complete-btn{
