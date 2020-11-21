@@ -3,6 +3,24 @@
   padding: 0;
   box-sizing: border-box;
 }
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background:  #f6d365; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #fda085; 
+}
 body {
   background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
   color: white;
@@ -11,7 +29,7 @@ body {
 }
 
 header {
-  font-size: 2rem;
+  font-size: 4vw;
 }
 
 header,
@@ -20,6 +38,8 @@ form {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-left: 1rem;
+  flex-wrap: wrap;
 }
 form input,
 form button {
@@ -39,6 +59,7 @@ form button {
 form input{
   border-radius: 0.5rem 0 0 0.5rem;
   outline: none;
+  max-width: 60%;
 }
 form button:hover {
   background: #ff6f47;
@@ -72,6 +93,7 @@ form button:hover {
   max-height: 3rem;
   max-width: 100%;
   overflow: hidden;
+  border-radius: 0rem 0.5rem 0.5rem 0rem;
 }
 .filter-todo {
   padding: 1rem;
@@ -86,7 +108,7 @@ form button:hover {
   border-radius: 0;
 }
 .trash-btn{
-  border-radius: 0rem, 0.5rem, 0.5rem, 0rem;
+  border-radius: 0rem 0.5rem 0.5rem 0rem;
 }
 .trash-btn,
 .complete-btn {
