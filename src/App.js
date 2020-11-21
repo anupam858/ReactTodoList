@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect, useCallback} from 'react'
 import './App.css';
 import Form from './components/Form'
 import TodoList from './components/TodoList'
@@ -12,7 +12,7 @@ function App() {
   const [filteredTodos, setFilteredTodos]= useState([]);
 
   //Fuctions
-  const filterHandler = () => {
+  const filterHandler = useCallback(() => {
     switch(status){
       case 'completed': setFilteredTodos(todos.filter(todo => todo.completed === true));
       break;
@@ -21,13 +21,13 @@ function App() {
       default: setFilteredTodos(todos);
       break;
     }
-  };
+  },[todos, status]);
 
-  const setLocalTodos = () => {
+  const setLocalTodos = useCallback(() => {
     localStorage.setItem('todos', JSON.stringify(todos));
-  };
+  }, [todos]);
 
-  const getLocalTodos = () => {
+  const getLocalTodos= () => {
 
     if(localStorage.getItem('todos') === null){
       localStorage.setItem('todos',JSON.stringify([]))
@@ -45,8 +45,7 @@ function App() {
   useEffect(() =>{
     filterHandler();
     setLocalTodos();
-    console.log("hi");
-  });
+  },[status,todos, filterHandler, setLocalTodos]);
 
 
   return (
