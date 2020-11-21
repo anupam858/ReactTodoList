@@ -9,6 +9,7 @@ body {
   font-family: "Poppins", sans-serif;
   min-height: 100vh;
 }
+
 header {
   font-size: 2rem;
 }
@@ -47,12 +48,18 @@ form button:hover {
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: width 2s linear;
 }
 
 .todo-list {
   min-width: 30%;
+  max-width: 50%;
+  max-height: 50vh;
+  overflow: hidden;
+  overflow-y: scroll;
   list-style: none;
 }
+
 
 .todo {
   margin: 0.5rem;
@@ -62,16 +69,28 @@ form button:hover {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  transition: all 1s ease;
+  max-height: 3rem;
+  max-width: 100%;
+  overflow: hidden;
 }
 .filter-todo {
   padding: 1rem;
 }
 .todo li {
   flex: 1;
-
+  width: 70%;
+  white-space: nowrap;
+}
+.todo button{
+  width: 7%;
 }
 
+.complete-btn{
+  border-radius: 0;
+}
+.trash-btn{
+  border-radius: 0rem, 0.5rem, 0.5rem, 0rem;
+}
 .trash-btn,
 .complete-btn {
   background: #ff6f47;
@@ -142,4 +161,22 @@ select {
 
 .select:hover::after {
   transform: scale(1.5);
+}
+
+.todo-enter{
+  width: 0%;
+}
+
+.todo-enter-active{
+  width: 100%;
+  transition: width 1s ease-in;
+}
+.todo-exit{
+  width: 100%;
+  opacity:1;
+}
+.todo-exit-active{
+  width: 0%;
+  opacity: 0;
+  transition: all 1s ease-out;
 }
