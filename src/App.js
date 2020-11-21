@@ -45,7 +45,7 @@ function App() {
   useEffect(() =>{
     filterHandler();
     setLocalTodos();
-  },[todos,status]);
+  });
 
 
   return (
